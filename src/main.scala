@@ -2,13 +2,14 @@ package com.github.bkaraargirov
 
 import adventofcode._2015.day_01.NotQuiteLisp
 
+import com.github.bkaraargirov.adventofcode._2015.day_02.IWasToldThereWouldBeNoMath
+
 import scala.io.Source
 
 @main def run() =
-  val filePath = "src/adventofcode/_2015/day_01/input.txt"
-  val fileContents = Source.fromFile(filePath).getLines.mkString("\n")
+  val filePath = "src/adventofcode/_2015/day_02/input.txt"
+  val fileContents = Source.fromFile(filePath).getLines
 
-  val notQuiteLisp = NotQuiteLisp()
-  val floor = notQuiteLisp.stopOnFloor(fileContents)
+  val noMath = IWasToldThereWouldBeNoMath()
 
-  println(floor)
+  println(noMath.calculateNeededRibbon(fileContents))
