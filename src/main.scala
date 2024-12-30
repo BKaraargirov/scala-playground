@@ -11,6 +11,7 @@ import scala.io.Source
   val filePath = "src/adventofcode/_2015/day_03/input.txt"
   val fileContents = Source.fromFile(filePath).getLines.mkString
 
-  val noMath = PerfectlySphericalHousesInAVacuum()
+  val housesInAVacuum = PerfectlySphericalHousesInAVacuum()
 
-  println(noMath.useRoboSanta(fileContents))
+  println(housesInAVacuum.countHousesWithPresents(fileContents))
+  println(housesInAVacuum.useRoboSanta(fileContents))

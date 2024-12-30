@@ -19,15 +19,15 @@ class PerfectlySphericalHousesInAVacuum:
 
   def countHousesWithPresents(directions: String): Long =
     val visitedHouses = traverseHouses(directions)
-    visitedHouses.keys.size
+    visitedHouses.size
 
   def useRoboSanta(directions: String): Long =
     val indexedDirections = directions.zipWithIndex
     val oddDirections: String = indexedDirections.filter((d, i) => i % 2 == 1).map(_._1).mkString
     val evenDirections = indexedDirections.filter((d, i) => i % 2 == 0).map(_._1).mkString
-    
-    val santaHouses = traverseHouses(oddDirections).keys.toSet
-    val roboHouses = traverseHouses(evenDirections).keys.toSet
+
+    val santaHouses = traverseHouses(oddDirections)
+    val roboHouses = traverseHouses(evenDirections)
 
     (santaHouses ++ roboHouses).size // Size of the union
 
@@ -39,13 +39,11 @@ class PerfectlySphericalHousesInAVacuum:
   private def traverseHouses(
     directions:String,
     currentPosition: Position = Position(0,0),
-    accumulator: mutable.Map[Position, Long] = mutable.Map(Position(0,0) -> 1)
-  ) : Map[Position, Long] =
-    if(directions.isBlank) return accumulator.toMap
+    accumulator: Set[Position] = Set(Position(0,0))
+  ) : Set[Position] =
+    if(directions.isBlank) return accumulator
 
     val nextPosition = currentPosition.move(directions.head)
-    val currentCount = accumulator.getOrElse(nextPosition, 0L)
-    accumulator.put(nextPosition, currentCount + 1)
 
-    traverseHouses(directions.tail, nextPosition, accumulator)
+    traverseHouses(directions.tail, nextPosition, accumulator + nextPosition)
 
