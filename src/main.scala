@@ -3,13 +3,14 @@ package com.github.bkaraargirov
 import adventofcode._2015.day_01.NotQuiteLisp
 
 import com.github.bkaraargirov.adventofcode._2015.day_02.IWasToldThereWouldBeNoMath
+import com.github.bkaraargirov.adventofcode._2015.day_03.PerfectlySphericalHousesInAVacuum
 
 import scala.io.Source
 
 @main def run() =
-  val filePath = "src/adventofcode/_2015/day_02/input.txt"
-  val fileContents = Source.fromFile(filePath).getLines
+  val filePath = "src/adventofcode/_2015/day_03/input.txt"
+  val fileContents = Source.fromFile(filePath).getLines.mkString
 
-  val noMath = IWasToldThereWouldBeNoMath()
+  val noMath = PerfectlySphericalHousesInAVacuum()
 
-  println(noMath.calculateNeededRibbon(fileContents))
+  println(noMath.useRoboSanta(fileContents))
