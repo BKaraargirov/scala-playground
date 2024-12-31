@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="scala.lang.modules.parallel.collections_3" type="repository">
+    <properties maven-id="org.scala-lang.modules:scala-parallel-collections_3:1.1.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/modules/scala-parallel-collections_3/1.1.0/scala-parallel-collections_3-1.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala3-library_3/3.3.4/scala3-library_3-3.3.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.13.14/scala-library-2.13.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
