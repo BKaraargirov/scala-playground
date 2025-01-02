@@ -6,16 +6,17 @@ import com.github.bkaraargirov.adventofcode._2015.day_02.IWasToldThereWouldBeNoM
 import com.github.bkaraargirov.adventofcode._2015.day_03.PerfectlySphericalHousesInAVacuum
 import com.github.bkaraargirov.adventofcode._2015.day_04.TheIdealStockingStuffer
 import com.github.bkaraargirov.adventofcode._2015.day_05.DoesntHeHaveInternElvesForThis
+import com.github.bkaraargirov.adventofcode._2015.day_06.ProbablyAFireHazard
 
 import scala.io.Source
 
 @main def run() =
-  val filePath = "src/adventofcode/_2015/day_05/input.txt"
+  val filePath = "src/adventofcode/_2015/day_06/input.txt"
   val fileContents = Source.fromFile(filePath).getLines
 
-  val interns = DoesntHeHaveInternElvesForThis()
+  val decoration = ProbablyAFireHazard()
 
 
-  val answer = interns.countNiceV2(fileContents.toList)
+  val answer = decoration.createMeshWithBrightness(fileContents.toList)
 
   println(answer)
